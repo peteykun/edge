@@ -6,5 +6,6 @@ class Event < ActiveRecord::Base
 
   has_attached_file :image, styles: { thumb: '100x100', tile: '375x192#', flagship: '760' },
     storage: :dropbox,
-    dropbox_credentials: Rails.root.join('config/dropbox.yml')
+    dropbox_credentials: Rails.root.join('config/dropbox.yml'),
+    path: ':class/:attachment/:id_partition/:style/:filename'
 end
