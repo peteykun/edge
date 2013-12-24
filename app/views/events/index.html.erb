@@ -1,123 +1,27 @@
-<div class="event_class top clearfix">
+<% for category in @categories %>
+	<% if category.events.any? %>
+		<div class="event_class clearfix">
 
-	<h1 class="left">Robotics</h1>
-	<%= image_tag 'categories/robotics.png', class: 'class_icon' %>
-	
-	<div style="clear: both;"></div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/blitzkrieg.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Blitzkrieg</div>
-			<div class="short_desc">Robo-war</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/poseidons_army.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Poseidon's Army</div>
-			<div class="short_desc">Aqua Robot Race</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/street_rover.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Street Rover</div>
-			<div class="short_desc">Line Follower</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/all_terrain.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">All Terrain</div>
-			<div class="short_desc">Multiple Terrain Race</div>
-		</div>
-	</div>
-</div>
-	
-<div class="event_class clearfix">
+		<h1 class="left"><%= category.name %></h1>
+		<%= image_tag category.black_icon.url, class: 'class_icon' %>
+		
+		<div style="clear: both;"></div>
+		
+		<% for event in category.events %>
+			<div class="event_tile">
+				<%= image_tag event.image.url, class: 'thumbnail' %>
+				<div class="hover">
+					<div class="name"><%= event.name %></div>
+					<div class="short_desc"><%= event.short_description %></div>
+				</div>
+			</div>
+		<% end %>
 
-	<h1 class="left">Compute-Aid</h1>
-	<%= image_tag 'categories/computing.png', class: 'class_icon' %>
-	
-	<div style="clear: both;"></div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/blitzkrieg.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Blitzkrieg</div>
-			<div class="short_desc">Robo-war</div>
 		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/poseidons_army.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Poseidon's Army</div>
-			<div class="short_desc">Aqua Robot Race</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/street_rover.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Street Rover</div>
-			<div class="short_desc">Line Follower</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/all_terrain.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">All Terrain</div>
-			<div class="short_desc">Multiple Terrain Race</div>
-		</div>
-	</div>
-</div>
-	
-<div class="event_class bottom clearfix">
+	<% end %>
+<% end %>
 
-	<h1 class="left">Cyber Crusade</h1>
-	<%= image_tag 'categories/gaming.png', class: 'class_icon' %>
-	
-	<div style="clear: both;"></div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/blitzkrieg.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Blitzkrieg</div>
-			<div class="short_desc">Robo-war</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/poseidons_army.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Poseidon's Army</div>
-			<div class="short_desc">Aqua Robot Race</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/street_rover.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">Street Rover</div>
-			<div class="short_desc">Line Follower</div>
-		</div>
-	</div>
-	
-	<div class="event_tile">
-		<%= image_tag 'events/robotics/all_terrain.jpg', class: 'thumbnail' %>
-		<div class="hover">
-			<div class="name">All Terrain</div>
-			<div class="short_desc">Multiple Terrain Race</div>
-		</div>
-	</div>
-</div>
-
+<!--
 <div class="contact clearfix">
 	<h1>Chart us down</h1>
 	
@@ -140,3 +44,4 @@
 		</form>
 	</div>
 </div>
+-->

@@ -1,2 +1,93 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="event top clearfix">
+
+	<h1 class="left"><%= @event.name %></h1>
+	<%= image_tag @event.category.black_icon, class: 'class_icon' %>
+	
+	<div style="clear: both;"></div>
+	
+	<%= image_tag @event.image, class: 'flagship' %>
+	
+	<div class="prizes clearfix">
+		<div class="prize">
+			<div class="prize_decr">First Place</div>
+			&#8377; 7000
+		</div>
+		
+		<div class="prize">
+			<div class="prize_decr">Second Place</div>
+			&#8377; 5000
+		</div>
+		
+		<div class="prize">
+			<div class="prize_decr">Third Place</div>
+			&#8377; 3000
+		</div>
+	</div>
+					
+	<div class="info">
+		<h2>Event Information</h2>
+		
+		<p>Flawless will predominantly test the individual participant's coding and analytic abilities, keeping in mind the different programming strategies concerned. Participants can register in groups of two. There will be two rounds-the first round will be the elimination round, prelims, subsequently followed by the finals, for the qualified participants.</p>
+
+		<b>Environment</b>
+		<ul>
+			<li>The programming languages C, C++ and Java may be used.
+			<li>The IDE Code::Blocks will be provided.
+			<li>Those who do not wish to use an IDE may use a text editor of their choice (gedit, nano or vim).
+		</ul>
+		
+		<b>Prelims</b><br/>
+		<i>Evaluation</i>
+		<ul>
+			<li>Evaluation will be based on the runtime temporal and spatial complexity.
+			<li>15 top scoring teams will be selected for the final.
+			<li>In case of a standoff, analysis of algorithms will be carried out.
+			<li>The number of problems and duration will be declared on the day of the event.
+			<li>Each team may use only a single computer.
+		</ul>
+		
+		<b>Finals</b><br/>
+		<i>Evaluation</i>
+		<ul>
+			<li>Once again, evaluation will be based on the runtime performance.
+			<li>In case of a standoff, the execution time for the code will be analyzed.
+			<li>Teams may be asked to explain their solutions to the judges.
+			<li>The duration of the round will be approximately 5 hours.
+			<li>Each team may use up to two computers.
+		</ul>
+
+		<b>Regulations</b>
+		<ul>
+			<li>External debugging tools or electronic devices may not be used.
+			<li>Team members can be from different institutions.
+			<li>The coordinator may change the rules at any time.
+			<li>Decision of the judges will be final.
+		</ul>
+	</div>
+					
+	<div class="contacts">
+		<a href="<%= @event.contact2.facebook_url %>" target="_blank">
+			<div class="contact">
+				<%= image_tag @event.contact1.facebook_avatar %>
+				
+				<div class="contact_info">
+					<div class="name"><%= @event.contact1.name %></div>
+					<div class="phone"><%= @event.contact1.phone %></div>
+					<div class="fb"><%= @event.contact1.facebook_username %></div>
+				</div>
+			</div>
+		</a>
+		
+		<a href="<%= @event.contact1.facebook_url %>" target="_blank">
+			<div class="contact">
+				<%= image_tag @event.contact2.facebook_avatar %>
+				
+				<div class="contact_info">
+					<div class="name"><%= @event.contact2.name %></div>
+					<div class="phone"><%= @event.contact2.phone %></div>
+					<div class="fb"><%= @event.contact2.facebook_username %></div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>

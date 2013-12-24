@@ -46,6 +46,7 @@ h2 {
 #container {
 	width: 760px;
 	margin: 0 auto;
+	min-height: 1250px;
 	padding: 30px 0 30px 0;
 }
 
@@ -92,6 +93,7 @@ header {
 	color: #fff;
 	margin: 9px 20px;
 	opacity: 0.85;
+	cursor: pointer;
 }
 
 #icons .description {
@@ -207,12 +209,16 @@ header {
 	font-size: 12px;
 	list-style: none;
 	margin: 0 -20px 0 -40px;
-	padding: 5px 10px;
 }
 
 #sidebar a {
 	text-decoration: none;
 	display: inline-block;
+	width: 180px;
+}
+
+#sidebar a {
+	padding: 5px 10px;
 }
 
 #sidebar ul li:hover a, #sidebar ul li.active {
@@ -223,6 +229,10 @@ header {
 
 #sidebar ul li.active {
 	background-color: #cc181e;
+
+	a {
+		color: #fff;
+	}
 }
 
 /* Social bar */
@@ -255,7 +265,7 @@ header {
 	border-bottom: 1px solid #000;
 }
 
-.event_class.top {
+.event_class:nth-child(1) {
 	border-top: 5px solid #000;
 }
 
