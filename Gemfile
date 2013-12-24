@@ -30,3 +30,4 @@ end
 gem 'bluecloth'
 gem 'paperclip'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem "paperclip-dropbox", ">= 1.1.7"
