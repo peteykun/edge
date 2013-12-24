@@ -6,7 +6,7 @@
 	<li><%= link_to 'Contact' %></li>
 </ul>
 
-<% for category in @categories %>
+<% for category in @all_categories %>
 	<% if !category.events.empty? %>
 
 		<h3 class="left"><%= category.name %></h3>

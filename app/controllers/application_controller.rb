@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   before_filter :populate_categories
 
   def populate_categories
-    @categories = Category.all
+    @all_categories = Category.all
   end
 end

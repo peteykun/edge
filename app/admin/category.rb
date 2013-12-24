@@ -15,7 +15,7 @@ ActiveAdmin.register Category do
   # end
 
   permit_params :name, :black_icon, :white_icon
-  config.sort_order = "id_asc"
+  config.sort_order = 'id_asc'
   
   index do
     column :id
@@ -30,11 +30,11 @@ ActiveAdmin.register Category do
   end
 
   form do |f|
-    f.inputs "Basic information" do
+    f.inputs 'Basic information' do
       f.input :name, label: 'Category Name'
     end
 
-    f.inputs "Icons" do
+    f.inputs 'Icons' do
       f.input :black_icon, as: :file
       f.input :white_icon, as: :file
     end
