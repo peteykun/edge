@@ -221,18 +221,18 @@ header {
 	padding: 5px 10px;
 }
 
-#sidebar ul li:hover a, #sidebar ul li.active {
+#sidebar ul li:hover a {
 	background-color: #333;
+}
+
+#sidebar ul li:hover a, #sidebar ul li.active {
 	color: #fff;
 	font-weight: 400;
 }
 
-#sidebar ul li.active {
+#sidebar ul li.active a {
 	background-color: #cc181e;
-
-	a {
-		color: #fff;
-	}
+	color: #fff;
 }
 
 /* Social bar */
