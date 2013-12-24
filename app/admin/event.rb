@@ -14,27 +14,38 @@ ActiveAdmin.register Event do
   #  permitted
   # end
 
-  permit_params :name, :category, :description, :contact1, :contact2
+  permit_params :name, :category_id, :short_description, :description, :contact1_id, :contact2_id, :image
   config.sort_order = "id_asc"
   
   index do
     column :id
-    column :description
-    column :image_url, label: 'Image'
-    column :contact1_id
-    column :contact2_id
+    column :description do |event|
+      simple_format BlueCloth.new(event.description).to_html
+    end
+    column :category
+    column 'Image' do |event|
+      image_tag(event.image.url(:thumb))
+    end
+    column 'First contact', :contact1_id do |event|
+      auto_link(event.contact1)
+    end
+    column 'Second contact', :contact2_id do |event|
+      auto_link(event.contact2)
+    end
 
     default_actions
   end
   
   form do |f|
     f.inputs "Basic information" do
-      f.input :name, label: 'Event Name'
-      f.input :category, label: 'Event Category'
+      f.input :name, label: 'Event name'
+      f.input :category, label: 'Event category'
+      f.input :short_description
     end
 
     f.inputs "Event description" do
-      f.input :description, label: 'Detailed Description'
+      f.input :image, as: :file
+      f.input :description, label: 'Detailed description'
     end
 
     f.inputs "Contacts" do

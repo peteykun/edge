@@ -49,3 +49,6 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'bluecloth'
+gem 'paperclip'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223102830) do
+ActiveRecord::Schema.define(version: 20131224053355) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20131223102830) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "black_icon_file_name"
+    t.string   "black_icon_content_type"
+    t.integer  "black_icon_file_size"
+    t.datetime "black_icon_updated_at"
+    t.string   "white_icon_file_name"
+    t.string   "white_icon_content_type"
+    t.integer  "white_icon_file_size"
+    t.datetime "white_icon_updated_at"
   end
 
   create_table "contacts", force: true do |t|
@@ -62,13 +70,17 @@ ActiveRecord::Schema.define(version: 20131223102830) do
 
   create_table "events", force: true do |t|
     t.string   "name"
-    t.text     "description", limit: 255
-    t.string   "image_url"
+    t.text     "description",        limit: 255
     t.integer  "category_id"
+    t.integer  "contact1_id"
+    t.integer  "contact2_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "contact2_id"
-    t.integer  "contact1_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "short_description"
   end
 
 end
