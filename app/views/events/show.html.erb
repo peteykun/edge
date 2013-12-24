@@ -5,7 +5,7 @@
 	
 	<div style="clear: both;"></div>
 	
-	<%= image_tag @event.image, class: 'flagship' %>
+	<%= image_tag @event.image.url(:flagship), class: 'flagship' %>
 	
 	<div class="prizes clearfix">
 		<div class="prize">
