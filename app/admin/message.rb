@@ -1,4 +1,4 @@
-ActiveAdmin.register Contact do
+ActiveAdmin.register Message do
 
   
   # See permitted parameters documentation:
@@ -14,30 +14,15 @@ ActiveAdmin.register Contact do
   #  permitted
   # end
 
-  permit_params :name, :facebook_username, :phone, :email
   config.sort_order = "id_asc"
   
   index do
     column :id
     column :name
     column :email
-    column :facebook_username
-    column :phone
+    column :message
+    column :contact_category_id
     default_actions
-  end
-
-  form do |f|
-    f.inputs "Basic information" do
-      f.input :name
-    end
-
-    f.inputs "Contact information" do
-      f.input :email
-      f.input :facebook_username
-      f.input :phone
-    end
-
-    f.actions
   end
   
 end

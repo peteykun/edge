@@ -1,17 +1,16 @@
 <h1>Contacts</h1>
 <div style="clear: both;"></div>
 
-<%= form_tag do |f| %>
+<%= form_for @message do |f| %>
 
 	<%= label_tag "What would you like to ask about?" %>
-	<%= select_tag "contact_categories", options_for_select(
-		Hash[@contact_categories.pluck(:name).collect { |v| [v, machinize(v)] }]
-	) %>
+
+	<%= f.collection_select :contact_category_id, ContactCategory.all, :id, :name %>
 
 	<br><br>
 
 	<% for contact_category in @contact_categories %>
-		<div class="hide contacts" id="cc_<%= machinize contact_category.name %>">
+		<div class="hide contacts" id="cc_<%= contact_category.id %>">
 			<% for contact in [contact_category.contact1, contact_category.contact2] %>
 			<a href="<%= contact.facebook_url %>" target="_blank">
 				<div class="contact">
@@ -36,10 +35,23 @@
 
 	<br><br><br><br>
 
-	<%= label_tag "Send us a message:" %>
-	<%= text_field_tag "name", nil, placeholder: "Your name" %>
-	<%= text_field_tag "email", nil, placeholder: "Your e-mail address" %>
-	<%= text_area_tag "message", nil, placeholder: "Your message" %>
-	<%= submit_tag "Submit" %>
+	<%= f.label "Send us a message:" %>
+
+	<% if @message.errors.any? %>
+	<ul class="error_messages">
+		<% for msg in @message.errors.full_messages %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+	<% elsif @success %>
+	<div class="success">
+		Your message has been sent!
+	</div>
+	<% end %>
+
+	<%= f.text_field 	:name, 		placeholder: "Your name" 			%>
+	<%= f.text_field 	:email, 	placeholder: "Your e-mail address" 	%>
+	<%= f.text_area 	:message, 	placeholder: "Your message" 		%>
+	<%= f.submit 		"Submit" 										%>
 
 <% end %>

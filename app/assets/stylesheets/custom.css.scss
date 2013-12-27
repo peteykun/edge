@@ -120,6 +120,19 @@ form {
 	float: right;
 }
 
+.error_messages {
+	padding: 0 0 5px 30px;
+	color: #cc181e;
+	font-size: 13px;
+	border-radius: 5px;
+}
+
+.success {
+	padding: 13px 0 18px 0;
+	font-size: 13px;
+	color: #22aa22;
+}
+
 #container {
 	width: 760px;
 	margin: 0 auto;
