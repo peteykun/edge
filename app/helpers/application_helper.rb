@@ -6,4 +6,8 @@ module ApplicationHelper
       link_to link_text, link_path
     end
   end
+
+  def machinize(human_string)
+    human_string.gsub(/( )/, '_').downcase
+  end
 end

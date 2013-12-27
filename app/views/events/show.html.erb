@@ -66,28 +66,18 @@
 	</div>
 					
 	<div class="contacts">
-		<a href="<%= @event.contact2.facebook_url %>" target="_blank">
+		<% for contact in [@event.contact1, @event.contact2] %>
+		<a href="<%= contact.facebook_url %>" target="_blank">
 			<div class="contact">
-				<%= image_tag @event.contact1.facebook_avatar %>
+				<%= image_tag contact.facebook_avatar %>
 				
 				<div class="contact_info">
-					<div class="name"><%= @event.contact1.name %></div>
-					<div class="phone"><%= @event.contact1.phone %></div>
-					<div class="fb"><%= @event.contact1.facebook_username %></div>
+					<div class="name"><%= contact.name %></div>
+					<div class="phone"><%= contact.phone %></div>
+					<div class="fb"><%= contact.facebook_username %></div>
 				</div>
 			</div>
 		</a>
-		
-		<a href="<%= @event.contact1.facebook_url %>" target="_blank">
-			<div class="contact">
-				<%= image_tag @event.contact2.facebook_avatar %>
-				
-				<div class="contact_info">
-					<div class="name"><%= @event.contact2.name %></div>
-					<div class="phone"><%= @event.contact2.phone %></div>
-					<div class="fb"><%= @event.contact2.facebook_username %></div>
-				</div>
-			</div>
-		</a>
+		<% end %>
 	</div>
 </div>

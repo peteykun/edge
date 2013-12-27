@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
+@import url("http://fonts.googleapis.com/css?family=Roboto:100,300,400");
 
 html {
 	font-family: 'Roboto', sans-serif;
@@ -7,6 +7,11 @@ html {
 html, body {
 	height: 100%;
 	margin: 0;
+	font-weight: 300;
+}
+
+a {
+	color: #333;
 }
 
 h1, h2, h3 {
@@ -15,20 +20,88 @@ h1, h2, h3 {
 	text-transform: uppercase;
 }
 
-a {
-	color: #333;
+h2 {
+	border-bottom: 1px solid #333;
 }
 
 b {
 	font-weight: 400;
 }
 
-h2 {
-	border-bottom: 1px solid #333;
+form {
+	* {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	input[type=text], select, textarea {
+		width: 742px;
+		max-width: 742px;
+		display: block;
+		border: 1px dotted #666;
+		background-color: #fff;
+	}
+
+	select, textarea {
+		margin: 5px 0;
+	}
+
+	input[type=text] {
+		margin: 0 0 5px 0;
+		padding: 8px;
+	}
+
+	select {
+		padding: 8px 5px;
+		width: 760px;
+	}
+
+	option {
+		height: 30px;
+	}
+
+	textarea {
+		padding: 8px;
+		text-align: left;
+		height: 250px;
+	}
+
+	input[type=submit] {
+		border: 0;
+		background-color: #cc181e;
+		color: #f2c2c3;
+		font-weight: 400;
+		padding: 5px 20px;
+		margin: 0;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+.hide {
+	display: none;
 }
 
 .left {
 	float: left;
+}
+
+.or {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 7px 0 11px 0;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
 }
 
 .right {
@@ -182,7 +255,6 @@ header {
 		margin-top: 0;
 
 		li {
-			font-weight: 300;
 			font-size: 12px;
 			list-style: none;
 			margin: 0 -20px 0 -40px;
@@ -284,8 +356,6 @@ header {
 			-webkit-transition: opacity .25s ease-in-out;
 
 			.name {
-				font-weight: 300;
-
 				&:before {
 				   content: "\00ab";
 				}
@@ -338,7 +408,6 @@ header {
 	}
 
 	.info {
-		font-weight: 300;
 		margin: 50px 0;
 		
 		b {
@@ -358,87 +427,85 @@ header {
 			margin-bottom: 40px;
 		}
 	}
+}
 
-	.contacts {
-		width: 100%;
-		padding: 20px 0;
+.contacts {
+	width: 100%;
+	padding: 20px 0;
 
-		.contact {
-			width: 360px;
-			padding: 3px;
+	.contact {
+		width: 360px;
+		padding: 3px;
+		float: left;
+		text-align: center;
+		color: #000;
+
+		a:nth-child(1) .contact {
+			margin: 0 20px 0 0;
+		}
+
+		img {
 			float: left;
-			text-align: center;
-			color: #000;
+			width: 120px;
+			border-radius: 60px;
+		}
 
-			a:nth-child(1) .contact {
-				margin: 0 20px 0 0;
+		.contact_info {
+			padding-top: 30px;
+
+			.name {
+				font-size: 20px;
 			}
 
-			img {
-				float: left;
-				width: 120px;
-				border-radius: 60px;
+			.phone, .fb {
+				font-size: 18px;
 			}
 
-			.contact_info {
-				padding-top: 30px;
-				font-weight: 300;
+			.phone {
+				color: #cc181e;
 
-				.name {
-					font-size: 20px;
+				&:before {
+					content: "\2706";
 				}
 
-				.phone, .fb {
+				&:first-letter {
+					margin-right: 5px;
+				}
+			}
+
+			.fb {
+				display: none;
+				color: #4861A3;
+
+				&:first-letter {
+					background-color: #4861A3;
+					color: #fff;
+					padding: 0 7px;
+					border-radius: 3px;
+					margin-right: 5px;
 					font-size: 18px;
 				}
+			}
+		}
 
-				.phone {
-					color: #cc181e;
-
-					&:before {
-						content: "\2706";
-					}
-
-					&:first-letter {
-						margin-right: 5px;
-					}
-				}
-
-				.fb {
-					display: none;
-					color: #4861A3;
-
-					&:first-letter {
-						background-color: #4861A3;
-						color: #fff;
-						padding: 0 7px;
-						border-radius: 3px;
-						margin-right: 5px;
-						font-size: 18px;
-					}
-				}
+		&:hover {
+			.phone {
+				display: none;
 			}
 
-			&:hover {
-				.phone {
-					display: none;
-				}
+			.fb {
+				display: block;
+				color: #4861A3;
 
-				.fb {
-					display: block;
-					color: #4861A3;
-					font-weight: 300;
-
-					&:before {
-						content: "f/";
-					}
+				&:before {
+					content: "f/";
 				}
 			}
 		}
 	}
 }
 
-.contact {
+.contact_form {
 	padding-top: 20px;
 
 	.map {
@@ -448,52 +515,21 @@ header {
 	.form  {
 		padding: 5px 0 0 10px;
 
-		* {
-			font-family: 'Roboto', sans-serif;
-			font-weight: 300;
-		}
-
 		input[type=text], select, textarea {
 			width: 360px;
-			display: block;
-			border: 1px dotted #666;
-		}
-
-		select, textarea {
-			margin: 5px 0;
-		}
-
-		input[type=text] {
-			margin: 0 0 5px 0;
-			padding: 8px;
 		}
 
 		select {
-			padding: 8px 5px;
-			width: 380px;
+			width: 378px;
 		}
 
 		textarea {
-			padding: 8px;
 			height: 163px;
-			text-align: left;
+			resize: none;
 
 			&::-webkit-input-placeholder::after {
 				display: block;
 				content: "Use this form to send us a message!\A \A Also feel free to call these people up:\A Ronak Kagrana (9007378218)\A Debbendu Biswas (8017200545)";
-			}
-		}
-
-		input[type=submit] {
-			border: 0;
-			background-color: #cc181e;
-			color: #f2c2c3;
-			padding: 5px 20px;
-			margin: 0;
-			float: right;
-
-			&:hover {
-				color: #fff;
 			}
 		}
 	}
@@ -505,7 +541,6 @@ footer {
 	background-color: #cc181e;
 	color: #e89698;
 	text-align: center;
-	font-weight: 300;
 	font-size: 13px;
 
 	a, b {

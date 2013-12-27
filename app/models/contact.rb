@@ -2,6 +2,9 @@ class Contact < ActiveRecord::Base
   has_many :events
   has_many :events
 
+  has_many :contact_categories
+  has_many :contact_categories
+
   def facebook_avatar
     'http://graph.facebook.com/' + facebook_username + '/picture?width=150&height=150'
   end
