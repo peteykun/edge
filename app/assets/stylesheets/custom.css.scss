@@ -442,6 +442,61 @@ header {
 	}
 }
 
+.sponsor-logo {
+	display: inline-block;
+	padding: 13px;
+	width: 160px;
+	height: 65px;
+	text-align: center;
+	position: relative;
+
+	img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		max-width: 160px;
+		max-height: 65px;
+	}
+}
+
+.sponsor {
+	display: inline-block;
+	width: 340px;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+
+	.logo {
+		margin: 0 auto;
+		width: 100px;
+		height: 100px;
+		float: left;
+
+		img {
+			max-width: 100px;
+			max-height: 100px;
+		}
+	}
+
+	.info {
+		text-align: center;
+
+		.title {
+			padding-top: 20px;
+			font-weight: 400;
+			font-size: 18px;
+		}
+	}
+
+	&:nth-child(even) {
+		margin-right: 20px;
+	}
+}
+
 .contacts {
 	width: 100%;
 	padding: 20px 0;
