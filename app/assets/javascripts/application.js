@@ -37,6 +37,9 @@ $(document).ready(function() {
 					refresh_active_contact();
 			});
 
+			window.history.pushState({}, document.title, href.substring(href.indexOf(window.location.origin) + window.location.origin.length));
+			this.blur();
+
 			return false;
 		}
 	}
