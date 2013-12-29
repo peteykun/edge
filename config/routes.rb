@@ -4,10 +4,14 @@ Edge::Application.routes.draw do
   
   root 'events#index'
 
+  match '/gallery', to: 'gallery#index', via: :get
+  get '/gallery/show'
+
   resources :events
   resources :contacts
   resources :messages
   resources :sponsors
+  resources :gallery_photos
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

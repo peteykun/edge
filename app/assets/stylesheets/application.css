@@ -9,6 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require font-awesome
+ *= require lazybox
  *= require custom
  *= require_self
  */
+
+#lazybox {
+	padding: 0;
+	border: none;
+	background: transparent;
+}

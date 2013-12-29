@@ -13,4 +13,31 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require lazybox
 //= require_tree .
+
+$(document).ready(function() {
+  $('a[rel*=lazybox]').lazybox({close: false, modal: false, opacity: 0.7, klass: 'lazybox', speed: 200, fixed: true});
+});
+
+$(document).ready(function() {
+	var links = $('#sidebar').find('a');
+
+	for(var i = 0; i < links.length; i++) {
+		links[i].onclick = function() {
+			var href = this.href;
+			$('li.active').removeClass('active');
+			$(this).parent().addClass('active');
+
+			$.get(href, function(response) {
+				window.response_html = response;
+				$('#container').html($(response).filter('#container').html());
+
+				if(href.indexOf('contacts') != -1)
+					refresh_active_contact();
+			});
+
+			return false;
+		}
+	}
+});

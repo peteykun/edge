@@ -462,6 +462,17 @@ header {
 	}
 }
 
+.photo {
+	width: 180px;
+	height: 180px;
+	overflow: hidden;
+	display: inline-block;
+
+	img {
+		height: 180px;
+	}
+}
+
 .sponsor {
 	display: inline-block;
 	width: 340px;

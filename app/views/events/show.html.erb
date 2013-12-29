@@ -64,7 +64,8 @@
 			<li>Decision of the judges will be final.
 		</ul>
 	</div>
-					
+	
+	<% if false %>
 	<div class="contacts">
 		<% for contact in [@event.contact1, @event.contact2] %>
 		<a href="<%= contact.facebook_url %>" target="_blank">
@@ -80,4 +81,5 @@
 		</a>
 		<% end %>
 	</div>
+	<% end %>
 </div>

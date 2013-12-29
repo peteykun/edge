@@ -1,4 +1,4 @@
-ActiveAdmin.register Sponsor do
+ActiveAdmin.register GalleryPhoto do
 
   
   # See permitted parameters documentation:
@@ -14,33 +14,30 @@ ActiveAdmin.register Sponsor do
   #  permitted
   # end
 
-  permit_params :name, :year, :url, :logo
+  permit_params :title, :description, :image
   config.sort_order = 'id_asc'
-  
+
   index do
     column :id
-    column :name do |sponsor|
-      link_to sponsor.name, sponsor.url
-    end
-    column :year
-    column 'Logo' do |sponsor|
-      image_tag(sponsor.logo.url(:small))
+    column :title
+    column :description
+    column 'Image' do |photo|
+      image_tag(photo.image.url(:square_tile))
     end
     default_actions
   end
 
   form do |f|
     f.inputs 'Basic information' do
-      f.input :name
-      f.input :year
+      f.input :title
+      f.input :description
     end
 
-    f.inputs 'Link and Logo' do
-      f.input :url, label: 'Link URL'
-      f.input :logo, as: :file
+    f.inputs 'The photo' do
+      f.input :image, as: :file
     end
+
     f.actions
   end
-
   
 end

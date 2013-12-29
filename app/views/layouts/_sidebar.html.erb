@@ -1,9 +1,9 @@
 <ul>
 	<%= nav_link 'Events', root_path %>
 	<li><%= link_to 'Speakers' %></li>
-	<li><%= link_to 'Gallery' %></li>
+	<%= nav_link 'Gallery', gallery_path %>
 	<%= nav_link 'Sponsors', sponsors_path %>
-	<li><%= nav_link 'Contact', contacts_path %></li>
+	<%= nav_link 'Contact', contacts_path %>
 </ul>
 
 <% for category in @all_categories %>
