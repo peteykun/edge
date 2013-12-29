@@ -7,6 +7,8 @@ College Fest web app built by [Soham Pal](http://facebook.com/soham).
 * Displays event details
 * Contacts
 * Sponsors
+* Gallery
 
 **To-do:**
-* Gallery
+* User login (if needed?)
+* Notifications (eventually)
