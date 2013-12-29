@@ -323,70 +323,74 @@ header {
 		border-bottom: 5px solid #000;
 	}
 
-	.event_tile {
-		height: 192px;
-		float: left;
-		cursor: pointer;
-		margin: 0 0 10px 0;
-		position: relative;
-		overflow: hidden;		/* tmp */
-
-		img {
-			width: 375px;		/* tmp*/
+	a {
+		display: inline-block;
+		
+		&:nth-child(even) {
+			margin-right: 10px;
 		}
 
-		.hover {
-			/* Metrics */
-			position: absolute;
-			top: 0;
-			left: 0;
-			padding-top: 65px;
+		.event_tile {
 			height: 192px;
-			width: 375px;
-			
-			/* Colors */
-			background-color: rgba(0, 0, 0, 0.85);
-			color: #fff;
-			
-			/* Text */
-			font-weight: 100;
-			font-size: 26px;
-			text-transform: uppercase;
-			
-			/* Alignment */
-			text-align: center;
-			display: table-cell;
-			vertical-align: middle;
-			
-			/* Animation */
-			opacity: 0;
-			transition: opacity .25s ease-in-out;
-			-moz-transition: opacity .25s ease-in-out;
-			-webkit-transition: opacity .25s ease-in-out;
+			float: left;
+			cursor: pointer;
+			margin: 0 0 10px 0;
+			position: relative;
+			overflow: hidden;		/* tmp */
 
-			.name {
-				&:before {
-				   content: "\00ab";
-				}
-
-				&:after {
-				   content: "\00bb";
-				}
+			img {
+				width: 375px;		/* tmp*/
 			}
 
-			.short_desc {
-				font-size: 16px;
-			}
+			.hover {
+				/* Metrics */
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding-top: 65px;
+				height: 192px;
+				width: 375px;
+				
+				/* Colors */
+				background-color: rgba(0, 0, 0, 0.85);
+				color: #fff;
+				
+				/* Text */
+				font-weight: 100;
+				font-size: 26px;
+				text-transform: uppercase;
+				
+				/* Alignment */
+				text-align: center;
+				display: table-cell;
+				vertical-align: middle;
+				
+				/* Animation */
+				opacity: 0;
+				transition: opacity .25s ease-in-out;
+				-moz-transition: opacity .25s ease-in-out;
+				-webkit-transition: opacity .25s ease-in-out;
 
-			&:hover {
-				opacity: 1;
+				.name {
+					&:before {
+					   content: "\00ab";
+					}
+
+					&:after {
+					   content: "\00bb";
+					}
+				}
+
+				.short_desc {
+					font-size: 16px;
+				}
+
+				&:hover {
+					opacity: 1;
+				}
 			}
 		}
 	}
-}
-
-.event_class .event_tile:nth-child(even) {
-	margin-right: 10px;
 }
 
 .event {
