@@ -46,18 +46,18 @@ $(document).ready(function() {
 	}
 
 	window.addEventListener('popstate', function(e) {
-		var oldActive = $('#sidebar li.active a')[0];
-		var newActive = $('#sidebar a[href^="' + window.location.pathname + '"]').first()[0];
-
-		console.log(oldActive);
-		console.log(newActive);
-
-		if(oldActive != newActive) {
-			$(oldActive).parent().removeClass('active');
-			$(newActive).parent().addClass('active');
-		}
-
 		$.get(document.location.pathname, function(response) {
+			var oldActive = $('#sidebar li.active a')[0];
+			var newActive = $('#sidebar a[href^="' + window.location.pathname + '"]').first()[0];
+
+			console.log(oldActive);
+			console.log(newActive);
+
+			if(oldActive != newActive) {
+				$(oldActive).parent().removeClass('active');
+				$(newActive).parent().addClass('active');
+			}
+
 			window.response_html = response;
 			$('#container').html($(response).filter('#container').html());
 
