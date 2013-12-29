@@ -335,10 +335,6 @@ header {
 			width: 375px;		/* tmp*/
 		}
 
-		&:nth-child(even) {
-			margin-right: 10px;
-		}
-
 		.hover {
 			/* Metrics */
 			position: absolute;
@@ -387,6 +383,10 @@ header {
 			}
 		}
 	}
+}
+
+.event_class .event_tile:nth-child(even) {
+	margin-right: 10px;
 }
 
 .event {
