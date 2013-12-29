@@ -5,11 +5,11 @@ class Category < ActiveRecord::Base
     storage: :ftp,
     path: '/:class/:attachment/:id_partition/:style/:filename',
     url: 'http://cdn.geekonix.org/:class/:attachment/:id_partition/:style/:filename',
-    ftp_servers: [Rails.root.join('config/ftp.yml')]
+    ftp_servers: [ { host: ENV['FTP_HOST'], user: ENV['FTP_USER'], password: ENV['FTP_PASS'] } ]
     
   has_attached_file :white_icon, styles: { small: '30x30' },
     storage: :ftp,
     path: '/:class/:attachment/:id_partition/:style/:filename',
     url: 'http://cdn.geekonix.org/:class/:attachment/:id_partition/:style/:filename',
-    ftp_servers: [Rails.root.join('config/ftp.yml')]
+    ftp_servers: [ { host: ENV['FTP_HOST'], user: ENV['FTP_USER'], password: ENV['FTP_PASS'] } ]
 end
