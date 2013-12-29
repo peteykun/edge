@@ -20,7 +20,7 @@ ActiveAdmin.register Event do
   index do
     column :id
     column :description do |event|
-      simple_format BlueCloth.new(event.description).to_html
+      truncate event.description, length: 350
     end
     column :category
     column 'Image' do |event|

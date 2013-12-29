@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 @refresh_active_contact = ->
+  return if $('.contacts').length is 1
+
   $('.contacts').hide() ;
   $('#cc_' + $('#message_contact_category_id option:selected').val() ).show() ;
 

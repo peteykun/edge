@@ -24,7 +24,7 @@ h2 {
 	border-bottom: 1px solid #333;
 }
 
-b {
+b, strong {
 	font-weight: 400;
 }
 
@@ -423,21 +423,25 @@ header {
 	.info {
 		margin: 50px 0;
 		
-		b {
+		b, strong {
 			font-weight: 400;
 			text-transform: uppercase;
 		}
 
-		b, i {
+		b, strong, i, em {
 			font-size: 14px;
 		}
 
 		ul {
-			margin-top: 5px;
+			margin-top: -10px;
 		}
 
-		ul, p {
+		ul {
 			margin-bottom: 40px;
+
+			br {
+				display: none;
+			}
 		}
 	}
 }
