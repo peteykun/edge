@@ -22,6 +22,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	var links = $('#sidebar').find('a');
+	window.history.replaceState({}, document.title, document.location.pathname);
 
 	for(var i = 0; i < links.length; i++) {
 		links[i].onclick = function() {
@@ -43,4 +44,25 @@ $(document).ready(function() {
 			return false;
 		}
 	}
+
+	window.addEventListener('popstate', function(e) {
+		var oldActive = $('#sidebar li.active a')[0];
+		var newActive = $('#sidebar a[href^="' + window.location.pathname + '"]').first()[0];
+
+		console.log(oldActive);
+		console.log(newActive);
+
+		if(oldActive != newActive) {
+			$(oldActive).parent().removeClass('active');
+			$(newActive).parent().addClass('active');
+		}
+
+		$.get(document.location.pathname, function(response) {
+			window.response_html = response;
+			$('#container').html($(response).filter('#container').html());
+
+			if(document.location.pathname.indexOf('contacts') != -1)
+				refresh_active_contact();
+		});
+	});
 });
