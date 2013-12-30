@@ -427,13 +427,10 @@ header {
 	.info {
 		margin: 50px 0;
 		
-		b, strong {
+		h1 {
 			font-weight: 400;
 			text-transform: uppercase;
-		}
-
-		b, strong, i, em {
-			font-size: 14px;
+			font-size: 16px;
 		}
 
 		ul {
