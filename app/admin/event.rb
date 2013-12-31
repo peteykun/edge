@@ -19,13 +19,8 @@ ActiveAdmin.register Event do
   
   index do
     column :id
-    column :description do |event|
-      truncate event.description, length: 350
-    end
+    column :name
     column :category
-    column 'Image' do |event|
-      image_tag(event.image.url(:thumb))
-    end
     column 'First contact', :contact1_id do |event|
       auto_link(event.contact1)
     end
@@ -34,6 +29,23 @@ ActiveAdmin.register Event do
     end
 
     default_actions
+  end
+
+  show do |event|
+    attributes_table do
+      row :id
+      row :name
+      row :image do
+        image_tag event.image.url(:flagship)
+      end
+      row :description do
+        markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+        raw markdown.render(event.description)
+      end
+      row :category_id
+      row :contact1_id
+      row :contact2_id
+    end
   end
   
   form do |f|
