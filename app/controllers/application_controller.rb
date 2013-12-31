@@ -7,5 +7,6 @@ class ApplicationController < ActionController::Base
 
   def populate_categories
     @all_categories = Category.all
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 end

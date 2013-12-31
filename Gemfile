@@ -28,6 +28,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'bluecloth'
+gem 'redcarpet'
 gem 'paperclip'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'paperclip-dropbox', '>= 1.1.7'
