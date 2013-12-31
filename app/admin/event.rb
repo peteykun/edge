@@ -16,6 +16,10 @@ ActiveAdmin.register Event do
 
   permit_params :name, :category_id, :short_description, :description, :contact1_id, :contact2_id, :image
   config.sort_order = "id_asc"
+
+  controller do
+    defaults finder: :find_by_slug
+  end
   
   index do
     column :id
