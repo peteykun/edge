@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   belongs_to :category, class_name: 'Category', foreign_key: :category_id
 
   belongs_to :contact1, class_name: 'Contact', foreign_key: :contact1_id

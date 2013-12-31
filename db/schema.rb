@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131228094039) do
+ActiveRecord::Schema.define(version: 20131231170123) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -90,7 +90,10 @@ ActiveRecord::Schema.define(version: 20131228094039) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "short_description"
+    t.string   "slug"
   end
+
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
 
   create_table "gallery_photos", force: true do |t|
     t.string   "title"

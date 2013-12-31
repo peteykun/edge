@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
   def populate_categories
     @all_categories = Category.all
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    @start_time = Time.now.usec
   end
 end

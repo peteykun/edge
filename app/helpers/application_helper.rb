@@ -10,4 +10,8 @@ module ApplicationHelper
   def machinize(human_string)
     human_string.gsub(/( )/, '_').downcase
   end
+
+  def load_time
+    sprintf('%.3f', (Time.now.usec - @start_time).abs / 1000000.0)
+  end
 end
