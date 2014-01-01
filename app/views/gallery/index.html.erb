@@ -1,7 +1,7 @@
 <h1>Gallery</h1>
 
+<div class="gallery">
 <% for photo in @photos %>
-<div class="photo">
 	<%= link_to image_tag(photo.image.url(:square_tile)), photo.image.url(:large), rel: :lazybox %>
-</div>
 <% end %>
+</div>
