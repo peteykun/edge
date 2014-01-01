@@ -14,7 +14,7 @@
 		<div class="separator clearfix"></div>
 
 		<ul class="event_class">
-			<% for event in category.events %>
+			<% for event in category.events.order('id ASC') %>
 			<%= nav_link event.name, event_path(event) %>
 			<% end %>
 		</ul>
