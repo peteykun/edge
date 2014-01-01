@@ -1,6 +1,6 @@
 class SponsorsController < ApplicationController
   def index
-    years = Sponsor.all.pluck(:year).sort.reverse
+    years = Sponsor.all.order('id ASC').pluck(:year).sort.reverse
     @sponsors = Hash.new
 
     years.each do |year|

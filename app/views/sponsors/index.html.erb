@@ -5,7 +5,7 @@
 
 <% for sponsor in sponsors_in_year %>
 <div class="sponsor-logo">
-	<%= link_to image_tag(sponsor.logo.url(:small)), sponsor.url %>
+	<%= link_to image_tag(sponsor.logo.url(:small)), sponsor.url, target: '_blank' %>
 </div>
 <% end %>
 <% end %>
