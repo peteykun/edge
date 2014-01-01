@@ -5,9 +5,12 @@
 @refresh_active_contact = ->
   return if $('.contacts').length is 1
 
-  $('.contacts').hide() ;
-  $('#cc_' + $('#message_contact_category_id option:selected').val() ).show() ;
+  $('.contacts').hide()
+  $('#cc_' + $('#message_contact_category_id option:selected').val() ).show()
 
-jQuery ->
-  window.onload = refresh_active_contact
+ready = ->
+  refresh_active_contact()
   $('#container').on({change: refresh_active_contact}, "#message_contact_category_id")
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
