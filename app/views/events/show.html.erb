@@ -34,6 +34,7 @@
 	
 	<div class="contacts">
 		<% for contact in [@event.contact1, @event.contact2] %>
+		<% if contact %>
 		<a href="<%= contact.facebook_url %>" target="_blank">
 			<div class="contact">
 				<%= image_tag contact.facebook_avatar %>
@@ -45,6 +46,7 @@
 				</div>
 			</div>
 		</a>
+		<% end %>
 		<% end %>
 	</div>
 </div>
