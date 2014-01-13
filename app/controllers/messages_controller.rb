@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     @success = @message.save
 
     if @success
-      ContactMailer.contact_mail(@message).deliver
+      #ContactMailer.contact_mail(@message).deliver
       @message = Message.new
     end
     
