@@ -14,12 +14,13 @@ ActiveAdmin.register Category do
   #  permitted
   # end
 
-  permit_params :name, :black_icon, :white_icon
+  permit_params :name, :priority, :black_icon, :white_icon
   config.sort_order = 'id_asc'
   
   index do
     column :id
     column :name
+    column :priority
     column 'Black Icon' do |event|
       image_tag(event.black_icon.url(:small))
     end
@@ -32,6 +33,10 @@ ActiveAdmin.register Category do
   form do |f|
     f.inputs 'Basic information' do
       f.input :name, label: 'Category Name'
+    end
+
+    f.inputs 'Arrangement' do
+      f.input :priority
     end
 
     f.inputs 'Icons' do
