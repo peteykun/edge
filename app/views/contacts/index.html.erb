@@ -3,7 +3,7 @@
 
 <%= form_for @message do |f| %>
 
-	<%= label_tag "What would you like to ask about?" %>
+	<%= label_tag(nil, "What would you like to ask about?") %>
 
 	<%= f.collection_select :contact_category_id, ContactCategory.all, :id, :name %>
 
@@ -35,7 +35,7 @@
 
 	<br><br><br><br>
 
-	<%= f.label "Send us a message:" %>
+	<%= f.label('message', "Send us a message:") %>
 
 	<% if @message.errors.any? %>
 	<ul class="error_messages">
