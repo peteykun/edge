@@ -16,6 +16,28 @@
 //= require lazybox
 //= require_tree .
 
+function highlight() {
+  $('.fa-stockit').animate({opacity: 1}, 2000, dim);
+}
+
+function dim() {
+  $('.fa-stockit').animate({opacity: 0.65}, 2000, highlight);
+}
+
 $(document).ready(function() {
   $('a[rel*=lazybox]').lazybox({close: false, modal: false, opacity: 0.7, klass: 'lazybox', speed: 200, fixed: true});
+
+  $('.fa-stockit').animate({opacity: 1}, 1000, function() {
+    $('.fa-stockit').animate({opacity: 0.65}, 1000, function() {
+      $('.fa-stockit').animate({opacity: 1}, 1000, function() {
+        $('.fa-stockit').animate({opacity: 0.65}, 1000, function() {
+          $('.fa-stockit').animate({opacity: 1}, 1000, function() {
+            $('.fa-stockit').animate({opacity: "0.85"}, 2000, function() {
+              $('.fa-stockit').css('opacity', '');
+            });
+          });
+        });
+      });
+    });
+  });
 });
