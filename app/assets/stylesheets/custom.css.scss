@@ -151,10 +151,17 @@ form {
 	background-size: cover;
 }
 
+.fa-ti {
+  background: image-url('TI.png');
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+}
+
 header {
 	height: 50px;
 	background-color: #cc181e;
-	padding: 15px 70px 15px 40px;
+	padding: 15px 10px 15px 40px;
 
 	#logo {
 		background: image-url('logo_w.png');
