@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
     @all_categories = Category.order(priority: :desc)
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @start_time = Time.now.usec
+    @hits = Net::HTTP.get(URI.parse('http://edge.geekonix.org/counter.php'))
   end
 end
