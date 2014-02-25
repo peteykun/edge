@@ -14,7 +14,7 @@ ActiveAdmin.register Event do
   #  permitted
   # end
 
-  permit_params :name, :category_id, :short_description, :description, :contact1_id, :contact2_id, :image
+  permit_params :name, :new, :category_id, :short_description, :description, :contact1_id, :contact2_id, :image
   config.sort_order = "id_asc"
 
   controller do
@@ -56,6 +56,7 @@ ActiveAdmin.register Event do
     f.inputs "Basic information" do
       f.input :name, label: 'Event name'
       f.input :category, label: 'Event category'
+      f.input :new, label: 'This is a new event'
       f.input :short_description
     end
 

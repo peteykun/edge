@@ -15,7 +15,11 @@
 
 		<ul class="event_class">
 			<% for event in category.events.order('id ASC') %>
-			<%= nav_link event.name, event_path(event) %>
+      <% if event.new %>
+			  <%= nav_link event.name, event_path(event), class: 'new' %>
+      <% else %>
+        <%= nav_link event.name, event_path(event) %>
+      <% end %>
 			<% end %>
 		</ul>
 	

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130151520) do
+ActiveRecord::Schema.define(version: 20140225163138) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140130151520) do
     t.datetime "image_updated_at"
     t.string   "short_description"
     t.string   "slug"
+    t.boolean  "new",                            default: false
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", unique: true
