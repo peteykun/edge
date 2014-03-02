@@ -1,0 +1,2 @@
+module AmbassadorApplicationsHelper
+end

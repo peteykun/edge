@@ -1,0 +1,60 @@
+<h1>Register yourself for Edge</h1>
+
+<%= debug (not (current_admin_user.nil?)) %>
+
+<p>Already registered? <a href="<%= login_path %>">Login here</a>.
+
+<%= form_for @participant do |f| %>
+
+  <% if @participant.errors.any? %>
+  <ul class="error_messages">
+    <% for msg in @participant.errors.full_messages %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% elsif @success %>
+  <div class="success">
+    Check your e-mail to complete registration.
+  </div>
+  <% end %>
+
+  <%= f.text_field     :name, 
+      placeholder:     "Your name",
+      autofocus:       true                   %>
+
+  <%= f.text_field     :college, 
+      placeholder:     "Your college"         %>
+
+  <%= f.text_field     :email, 
+      placeholder:     "Your e-mail address"  %>
+
+  <%= f.password_field :password, 
+      placeholder:     "Choose a password"    %>
+
+  <%= f.password_field :password_confirmation, 
+      placeholder:     "Retype your password" %>
+
+  <%= f.text_field     :phone, 
+      placeholder:     "Your mobile number"   %>
+
+
+  <div class="controls">
+    <%= hidden_field_tag "participant[event_ids][]", nil%>
+    <% for category in @all_categories %>
+    <div class="category_checkboxes clearfix">
+      <h4><%= category.name %></h4>
+      <% category.events.each do |event| %>
+      <label class="checkbox">
+        <%= check_box_tag "participant[event_ids][]", event.id, @participant.event_ids.include?(event.id), id: dom_id(event) %>
+        <%= event.name %>
+      </label>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+  <%= recaptcha_tags ajax: true %>
+
+  <%= f.submit "Submit" %>
+
+<% end %>

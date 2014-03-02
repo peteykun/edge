@@ -1,0 +1,39 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @participant do |f| %>
+
+  <% if @participant.errors.any? %>
+  <ul class="error_messages">
+    <% for msg in @participant.errors.full_messages %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% elsif @success %>
+  <div class="success">
+    Details successfully updated.
+  </div>
+  <% end %>
+
+  <%= f.text_field  :name,    placeholder: "Your name"            %>
+  <%= f.text_field  :college, placeholder: "Your college"         %>
+  <%= f.text_field  :email,   placeholder: "Your e-mail address"  %>
+  <%= f.text_field  :phone,   placeholder: "Your mobile number"   %>
+
+  <div class="controls">
+    <%= hidden_field_tag "participant[event_ids][]", nil%>
+    <% for category in @all_categories %>
+    <div class="category_checkboxes clearfix">
+      <h4><%= category.name %></h4>
+      <% category.events.each do |event| %>
+      <label class="checkbox">
+        <%= check_box_tag "participant[event_ids][]", event.id, @participant.event_ids.include?(event.id), id: dom_id(event) %>
+        <%= event.name %>
+      </label>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+  <%= f.submit "Submit" %>
+
+<% end %>

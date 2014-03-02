@@ -1,0 +1,72 @@
+<h1>Participation Card</h1>
+
+<p class="noprint">Print out a copy of this participation card and bring it to the Edge registration desk in order to complete the registration process. Bookmark this page in order to print a copy of your participation card later.</p>
+
+<br>
+
+<div id="participant_card">
+  <div class="row clearfix">
+    <img src="<%= participant_path(@participant) %>.svg" width="100px" class="right">
+
+    <div class="reg_field">
+      Registration ID
+    </div>
+
+    <div class="reg_no">
+      ONL<%= @participant.id.to_s.rjust(10, '0') %>
+    </div>
+  </div>
+
+  <div class="row clearfix">
+    <div class="field">
+      Name
+    </div>
+
+    <div class="entry">
+      <%= @participant.name %>
+    </div>
+  </div>
+
+  <div class="row clearfix">
+    <div class="field">
+      College
+    </div>
+
+    <div class="entry">
+      <%= @participant.college %>
+    </div>
+  </div>
+
+  <div class="row clearfix">
+    <div class="field">
+      E-mail
+    </div>
+
+    <div class="entry">
+      <%= @participant.email %>
+    </div>
+  </div>
+
+  <div class="row clearfix">
+    <div class="field">
+      Phone
+    </div>
+
+    <div class="entry">
+      <%= @participant.phone %>
+    </div>
+  </div>
+
+
+  <div class="row clearfix">
+    <div class="field">
+      Events
+    </div>
+
+    <div class="entry">
+      <%= raw @participant.events.pluck(:name) * '<br>' %>
+    </div>
+  </div>
+</div>
+
+<br><br>

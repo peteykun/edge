@@ -1,0 +1,43 @@
+<h1>Be an Ambassador</h1>
+<p>Would you like to become a campus ambassador for <strong><%= current_user.college.titlecase %></strong>?</p>
+
+<p>As a campus ambassador, you will have to:</p>
+
+<ul>
+  <li>Publicize Edge events in your college.</li>
+  <li>Help out Edge representatives when they visit <em><%= current_user.college.titlecase %></em>.</li>
+  <li>Post on behalf of the Edge team in your college's Facebook groups.</li>
+  <li>Act as a bridge between participants in your college and the Edge core committee.</li>
+</ul>
+
+<p>Being a campus ambassador entitles you to benefits like:</p>
+<ul>
+  <li>Having the favor returned to you when <em><%= current_user.college.titlecase %></em> holds its tech fest.</li>
+  <li>A certificate of appreciation from the Edge team.</li>
+  <li>If you do a great job, goodies!</li>
+</ul>
+
+<br><hr><br>
+
+<% if @not_applied %>
+  <p>In order to apply, please tell us in 300 words or less why we should select you as an ambassador for Edge:</p>
+
+  <%= form_for @application do |f| %>
+
+    <%= f.hidden_field :participant_id %>
+
+    <%= f.text_area :essay %>
+
+    <%= recaptcha_tags ajax: true %>
+
+    <%= f.submit "Submit" %>
+
+  <% end %>
+<% else %>
+  <div style="text-align: center;">
+    <p>You've already sent in your application.</p>
+
+    <p>We'll contact you if you're selected, thanks. :)</p>
+  </div>
+<% end %>
+
