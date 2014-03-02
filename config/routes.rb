@@ -1,17 +1,29 @@
 Edge::Application.routes.draw do
+  get "ambassador_applications/new"
+  get "campus_ambassadors/new"
+  get "participants/new"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
-  root 'events#index'
-
-  match '/gallery', to: 'gallery#index', via: :get
-  get '/gallery/show'
+  root  'events#index'
+  match '/gallery',            to: 'gallery#index',               via: 'get'
+  match '/login',              to: 'sessions#new',                via: 'get'
+  match '/register',           to: 'participants#new',            via: 'get'
+  match '/profile',            to: 'participants#show_current',   via: 'get'
+  match '/ucp',                to: 'participants#edit_current',   via: 'get'
+  match '/logout',             to: 'sessions#destroy',            via: 'get'
+  match '/ambassador_program', to: 'ambassador_applications#new', via: 'get'
+  get   '/gallery/show'
+  match '/categories/set_preferred/:id', to: 'categories#set_preferred', via: :post
 
   resources :events
   resources :contacts
   resources :messages
   resources :sponsors
   resources :gallery_photos
+  resources :participants
+  resources :ambassador_applications
+  resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

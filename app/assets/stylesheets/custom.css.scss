@@ -38,10 +38,10 @@ form {
 		margin-bottom: 10px;
 	}
 
-	input[type=text], select, textarea {
+	input[type=text], input[type=password], select, textarea {
 		width: 742px;
 		max-width: 742px;
-		display: block;
+		/*display: block;*/
 		border: 1px dotted #666;
 		background-color: #fff;
 	}
@@ -50,7 +50,7 @@ form {
 		margin: 5px 0;
 	}
 
-	input[type=text] {
+	input[type=text], input[type=password] {
 		margin: 0 0 5px 0;
 		padding: 8px;
 	}
@@ -82,6 +82,10 @@ form {
 			color: #fff;
 		}
 	}
+
+  #dynamic_recaptcha {
+    margin-bottom: 10px;
+  }
 }
 
 .hide {
@@ -136,7 +140,7 @@ form {
 #container {
 	width: 760px;
 	margin: 0 auto;
-	min-height: 1690px;
+	min-height: 1500px;
 	padding: 30px 0 30px 0;
 
 	h1:nth-child(1) {
@@ -264,19 +268,37 @@ header {
 
 	h3 {
 		font-size: 16px;
-		margin: 4px 0 0 10px;
+		margin: 4px 0 10px 10px;
 		padding-bottom: 0;
 	}
 
 	img {
-		height: 30px;
+		height: 22px;
 		margin-bottom: 5px;
 	}
 
-	.separator {
-		border-bottom: 1px solid #333;
-		margin: 0 -10px 10px 10px;
-	}
+  .category_switcher {
+    margin: 10px 0 25px 0;
+
+    .category_button {
+      cursor: pointer;
+
+      h3 {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .separator {
+    border-bottom: 1px solid #333;
+    margin: 0 -10px 10px 10px;
+  }
+
+  .sidebar_category {
+    .separator {
+      border-bottom: 1px dashed #333;
+    }
+  }
 
 	ul {
 		margin-top: 0;
@@ -284,7 +306,7 @@ header {
 		li {
 			font-size: 12px;
 			list-style: none;
-			margin: 0 -20px 0 -40px;
+      margin: 0 -20px 0 -40px;
 
       &.new {
         background-image: image-url('new_event.png');
@@ -694,4 +716,87 @@ footer {
 	#social_bar {
 		display: none;
 	}
+}
+
+.category_checkboxes {
+  border: 1px dotted #666;
+  margin: 15px 0;
+  padding: 10px;
+
+  h4 {
+    font-weight: 400;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+
+  label.checkbox {
+    width: 33%;
+    float: left;
+  }
+}
+
+#participant_card {
+  width: 100%;
+  border: 1px solid #333;
+  border-bottom: none;
+
+  .row {
+    border-bottom: 1px solid #333;
+    padding: 10px;
+
+    .reg_field {
+      margin-top: 8px;
+      padding-left: 5px;
+    }
+
+    .reg_field, .field {
+      font-weight: 400;
+    }
+
+    .reg_no {
+      font-size: 3em;
+    }
+
+    .field {
+      width: 20%;
+      float: left;
+    }
+
+    .entry {
+      width: 80%;
+      float: right;
+    }
+  }
+}
+
+iframe {
+  display: block;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #sidebar, #social_bar, iframe {
+    display: none;
+  }
+
+  #container {
+    min-height: inherit;
+  }
+
+  #container, #container * {
+    visibility: visible;
+  }
+
+  .noprint {
+    display: none;
+  }
+
+  #container {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }

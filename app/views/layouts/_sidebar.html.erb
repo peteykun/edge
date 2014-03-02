@@ -6,22 +6,52 @@
 	<%= nav_link 'Contact', contacts_path %>
 </ul>
 
+<h3>User Area</h3>
+<div class="separator clearfix"></div>
+<ul>
+  <% if current_user %>
+  <%= nav_link 'Participation Card', profile_path %>
+  <%= nav_link 'Edit Profile', ucp_path %>
+  <%= nav_link 'Be an Ambassador', ambassador_program_path %>
+  <%= nav_link 'Log out', logout_path %>
+  <% else %>
+  <%= nav_link 'Register', register_path %>
+  <%= nav_link 'Log in', login_path %>
+  <% end %>
+</ul>
+
+<h3>Events</h3>
+<div class="separator clearfix"></div>
+<div class="category_switcher">
+  <% for category in @all_categories %>
+    
+    <span class="category_button" data-id="<%= category.id %>">
+
+      <h3 class="left"><%= category.name %></h3>
+      <%= image_tag category.black_icon.url, class: 'class_icon' %>
+      <div class="clearfix"></div>
+    
+    </span>
+
+    <div class="sidebar_category <%= 'hide' if @event.nil? or @event.category != category %>" data-id="<%= category.id %>">
+      <div class="separator clearfix"></div>
+
+      <ul class="event_class">
+        <% for event in category.events.order('id ASC') %>
+        <% if event.new %>
+          <%= nav_link event.name, event_path(event), class: 'new' %>
+        <% else %>
+          <%= nav_link event.name, event_path(event) %>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+</div>
+
 <% for category in @all_categories %>
 	<% if !category.events.empty? %>
-
-		<h3 class="left"><%= category.name %></h3>
-		<%= image_tag category.black_icon.url, class: 'class_icon' %>
-		<div class="separator clearfix"></div>
-
-		<ul class="event_class">
-			<% for event in category.events.order('id ASC') %>
-      <% if event.new %>
-			  <%= nav_link event.name, event_path(event), class: 'new' %>
-      <% else %>
-        <%= nav_link event.name, event_path(event) %>
-      <% end %>
-			<% end %>
-		</ul>
-	
+  
 	<% end %>
 <% end %>

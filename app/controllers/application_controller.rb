@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
     @start_time = Time.now.usec
     @hits = Net::HTTP.get(URI.parse('http://edge.geekonix.org/counter.php'))
   end
+  
+  private
+    def current_user
+      @current_user ||= Participant.find(session[:participant_id]) if session[:participant_id]
+    end
+    helper_method :current_user
 end

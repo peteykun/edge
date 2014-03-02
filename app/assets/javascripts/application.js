@@ -24,7 +24,15 @@ function dim() {
   $('.fa-stockit').animate({opacity: 0.65}, 2000, highlight);
 }
 
+function bind_buttons() {
+  $('.category_button').on('click', function() {
+    $('.sidebar_category').hide();
+    $('.sidebar_category[data-id="' + $(this).data('id') + '"]').show();
+  });
+}
+
 $(document).ready(function() {
+
   $('a[rel*=lazybox]').lazybox({close: false, modal: false, opacity: 0.7, klass: 'lazybox', speed: 200, fixed: true});
 
   $('.fa-stockit').animate({opacity: 1}, 1000, function() {
@@ -41,3 +49,6 @@ $(document).ready(function() {
     });
   });
 });
+
+$(document).ready(bind_buttons);
+$(document).on('page:load', bind_buttons);
