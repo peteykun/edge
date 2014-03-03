@@ -14,6 +14,7 @@ ActiveAdmin.register Participant do
   #  permitted
   # end
 
+  permit_params :name, :college, :email, :phone
 
   index do
     column :id
@@ -23,6 +24,18 @@ ActiveAdmin.register Participant do
     column :phone
 
     default_actions
+  end
+
+
+  form do |f|
+    f.inputs "Basic information" do
+      f.input :name
+      f.input :college
+      f.input :email
+      f.input :phone
+    end
+
+    f.actions
   end
 
   show do |participant|

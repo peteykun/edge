@@ -10,6 +10,7 @@ class Participant < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, if: :password
   validate  :participation_in_at_least_one_event
   validates_format_of :email, :with => /@/
+  before_validation :downcase_email
 
   has_secure_password
 
@@ -17,5 +18,9 @@ class Participant < ActiveRecord::Base
     if self.events.size < 1
       errors[:base] << "Must take part in at least one event."
     end
+  end
+
+  def downcase_email
+    email.downcase!
   end
 end
