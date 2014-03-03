@@ -30,7 +30,7 @@ class ParticipantsController < ApplicationController
       session[:participant_id] = @participant.id
       redirect_to profile_path
     else
-      render 'edit'
+      render 'new'
     end
   end
 
