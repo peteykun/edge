@@ -30,7 +30,7 @@ end
 
 gem 'bluecloth'
 gem 'redcarpet'
-gem 'paperclip'
+gem 'paperclip', '~> 3.5'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'paperclip-storage-ftp'

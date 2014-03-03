@@ -24,6 +24,8 @@
 <div class="separator clearfix"></div>
 <div class="category_switcher">
   <% for category in @all_categories %>
+
+  <div class="category_switchee">
     
     <span class="category_button" data-id="<%= category.id %>">
 
@@ -46,6 +48,8 @@
         <% end %>
       </ul>
     </div>
+
+  </div>
 
   <% end %>
 </div>

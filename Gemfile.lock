@@ -110,7 +110,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.4)
     orm_adapter (0.5.0)
-    paperclip (4.1.1)
+    paperclip (3.5.4)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
@@ -205,7 +205,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   lazybox
-  paperclip
+  paperclip (~> 3.5)
   paperclip-dropbox (>= 1.1.7)
   paperclip-storage-ftp
   pg (= 0.15.1)
