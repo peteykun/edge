@@ -17,3 +17,6 @@
 
 # Ignore paperclip attachments
 /public/system/*
+
+# Ignore recaptcha config
+/config/initializers/recaptcha.rb
