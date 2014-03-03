@@ -29,6 +29,8 @@ class ParticipantsController < ApplicationController
     if verify_recaptcha(model: @participant) && (@success = @participant.save)
       session[:participant_id] = @participant.id
       redirect_to profile_path
+    else
+      render 'edit'
     end
   end
 
