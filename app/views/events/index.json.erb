@@ -1,0 +1,30 @@
+[
+  <% @all_categories.each do |category| %>
+  {
+    "name": "<%= category.name %>",
+    "black_icon_url": "<%= category.black_icon.url %>",
+    "white_icon_url": "<%= category.white_icon.url %>",
+    "events": [
+      <% category.events.each do |event| %>
+      {
+        "name": "<%= event.name %>",
+        "short_description": "<%= event.short_description %>",
+        "description": "<%= @markdown.render(event.description) %>",
+        "image_url": "<%= event.image.url %>",
+        "contacts": [
+          <% for contact in [event.contact1, event.contact2] %>
+          <% if contact %>
+          {
+            "name": "<%= contact.name %>",
+            "phone": "<%= contact.phone %>",
+            "facebook": "<%= contact.facebook_username %>"
+          },
+          <% end %>
+          <% end %>
+        ]
+      },
+      <% end %>
+    ]
+  },
+  <% end %>
+]
