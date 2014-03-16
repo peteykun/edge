@@ -14,6 +14,15 @@
         <meta property="og:image" content="<%= @event.image.url(:flagship) %>">
         <meta property="og:title" content="<%= @event.name %> - Edge">
         <meta property="og:description" content="<%= @event.description.split(/#/, 2).first.squish %>">
+        <%
+          authors = []
+
+          [@event.contact1, @event.contact2].each do |contact|
+            authors << contact.name if contact
+          end
+        %>
+        <meta name="author" content="<%= authors.join(", ") %>">
+        <meta property="og:type" content="article">
       <% else %>
         <meta property="og:image" content="<%= image_url('mascot.jpg') %>">
         <meta property="og:title" content="Edge">
