@@ -304,7 +304,7 @@ header {
 		margin-top: 0;
 
 		li {
-			font-size: 12px;
+			font-size: 13px;
 			list-style: none;
       margin: 0 -20px 0 -40px;
 
@@ -335,7 +335,7 @@ header {
 		text-decoration: none;
 		display: inline-block;
 		width: 180px;
-		padding: 5px 10px;
+		padding: 4px 10px;
 	}
 }
 
@@ -355,6 +355,71 @@ header {
 		height: 500px;
 		margin-bottom: 30px;
 	}
+
+  #social_buttons {
+    margin: 20px auto;
+
+    div {
+      float: left;
+      width: 70px;
+      margin: 4px;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+
+        .text {
+          font-size: 11px;
+          margin: 0 auto;
+          text-transform: uppercase;
+        }
+      }
+
+      &#facebook a {
+        color: #3b5998;
+      }
+
+      &#twitter a {
+        color: #55acee;
+      }
+
+      &#youtube a {
+        color: #c4302b;
+      }
+    }
+  }
+
+  #guests {
+    background-image: image-url('guests-header.png');
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 25px;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    .guest {
+      text-align: center;
+      margin-bottom: 50px;
+
+      img {
+        width: 150px;
+        border-radius: 75px;
+        border: 1px dashed #ccc;
+        display: block;
+        margin: 20px auto 15px auto;
+      }
+
+      .name, .affiliation {
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+
+      .affliation {
+        font-size: 11px;
+        color: #cc181e;
+      }
+    }
+  }
 }
 
 #container .event_class {

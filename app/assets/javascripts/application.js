@@ -26,8 +26,13 @@ function dim() {
 
 function bind_buttons() {
   $('.category_button').on('click', function() {
-    $('.sidebar_category').slideUp(400);
-    $('.sidebar_category[data-id="' + $(this).data('id') + '"]').slideDown(400);
+    if($('.sidebar_category[data-id="' + $(this).data('id') + '"]').is(":visible"))
+      $('.sidebar_category').slideUp(400);
+    else
+    {
+      $('.sidebar_category').slideUp(400);
+      $('.sidebar_category[data-id="' + $(this).data('id') + '"]').slideDown(400);
+    }
   });
 }
 
