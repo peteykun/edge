@@ -12,7 +12,7 @@
 
       <% if @event %>
         <meta property="og:image" content="<%= @event.image.url(:flagship) %>">
-        <meta property="og:title" content="<%= @event.name %> - Edge">
+        <meta property="og:title" content="<%= @event.name %>">
         <meta property="og:description" content="<%= @event.description.split(/#/, 2).first.squish %>">
         <%
           authors = []
