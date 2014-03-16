@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-  		<title>Edge</title>
+  		<title><% if @event %><%= @event.name %> - <% end %>Edge</title>
   		<meta charset="UTF-8">
   		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
   		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -9,6 +9,20 @@
   		<script src="//platform.twitter.com/widgets.js"></script>
   		<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
   		<%= csrf_meta_tags %>
+
+      <% if @event %>
+        <meta property="og:image" content="<%= @event.image.url(:original) %>">
+        <meta property="og:title" content="<%= @event.name %> - Edge">
+        <meta property="og:description" content="<%= @event.description.split(/#/, 2).first.squish %>">
+      <% else %>
+        <meta property="og:image" content="<%= image_url('mascot.jpg') %>">
+        <meta property="og:title" content="Edge">
+        <meta property="og:description" content="Edge is the annual Techno-Management fest of Techno India, Salt Lake. The biggest technical fest of Kolkata, Edge sports a wide range of events, intense compeition and lakhs of prize money up for grabs!">
+      <% end %>
+
+      <meta property="og:url" content="<%= request.original_url %>">
+      <meta property="og:site_name" content="Edge">
+      <meta property="og:type" content="website">
 	</head>
 	<body>
 
