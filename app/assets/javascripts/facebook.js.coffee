@@ -1,3 +1,4 @@
+/*
 fb_root = null
 fb_events_bound = false
 
@@ -34,3 +35,4 @@ initializeFacebookSDK = ->
     status    : true
     cookie    : true
     xfbml     : true
+*/

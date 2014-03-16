@@ -1,3 +1,4 @@
+/*
 twttr_events_bound = false
 
 $ ->
@@ -13,3 +14,4 @@ renderTweetButtons = ->
     button.attr('data-url', document.location.href) unless button.data('url')?
     button.attr('data-text', document.title) unless button.data('text')?  
   twttr.widgets.load()
+*/
