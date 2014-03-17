@@ -1,11 +1,31 @@
 <h1>Sponsors</h1>
 
 <% @sponsors.each do |year, sponsors_in_year| %>
-<h2><%= year %></h2>
+  <h2><%= year %></h2>
 
-<% for sponsor in sponsors_in_year %>
-<div class="sponsor-logo">
-	<%= link_to image_tag(sponsor.logo.url(:small)), sponsor.url, target: '_blank' %>
-</div>
-<% end %>
+  <%
+    adjust = 0
+
+    subtitled = sponsors_in_year.where.not(subtitle: nil)
+    
+    if subtitled.count % 4 != 0
+      adjust = 4 - subtitled.count % 4
+    end
+  %>
+
+  <% for sponsor in subtitled %>
+    <div class="sponsor-logo framed">
+    	<%= link_to image_tag(sponsor.logo.url(:small)), sponsor.url, target: '_blank' %>
+
+      <div class="subtitle"><%= sponsor.subtitle %></div>
+    </div>
+  <% end %>
+
+  <% i = 0 %>
+
+  <% for sponsor in sponsors_in_year.where(subtitle: nil) %>
+    <div class="sponsor-logo <%= 'frame-align' if (i+=1) <= adjust %>">
+      <%= link_to image_tag(sponsor.logo.url(:small)), sponsor.url, target: '_blank' %>
+    </div>
+  <% end %>
 <% end %>

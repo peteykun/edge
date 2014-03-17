@@ -14,14 +14,15 @@ ActiveAdmin.register Sponsor do
   #  permitted
   # end
 
-  permit_params :name, :year, :url, :logo
-  config.sort_order = 'id_asc'
+  permit_params :name, :year, :url, :logo, :subtitle
+  config.sort_order = 'year_desc'
   
   index do
     column :id
     column :name do |sponsor|
       link_to sponsor.name, sponsor.url
     end
+    column :subtitle
     column :year
     column 'Logo' do |sponsor|
       image_tag(sponsor.logo.url(:small))
@@ -32,6 +33,7 @@ ActiveAdmin.register Sponsor do
   form do |f|
     f.inputs 'Basic information' do
       f.input :name
+      f.input :subtitle
       f.input :year
     end
 
@@ -39,6 +41,7 @@ ActiveAdmin.register Sponsor do
       f.input :url, label: 'Link URL'
       f.input :logo, as: :file
     end
+
     f.actions
   end
 

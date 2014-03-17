@@ -594,11 +594,33 @@ header {
 
 .sponsor-logo {
 	display: inline-block;
-	padding: 13px;
+	padding: 13px 8.5px;
 	width: 160px;
 	height: 65px;
 	text-align: center;
 	position: relative;
+
+  &.framed {
+    border: 5px solid #CC181E;
+    border-bottom: 30px solid #CC181E;
+  }
+
+  &.frame-align {
+    border: 5px solid #fff;
+    border-bottom: 30px solid #fff;
+  }
+
+  .subtitle {
+    margin-top: 5px;
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    bottom: -23px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
 
 	img {
 		position: absolute;
