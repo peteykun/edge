@@ -16,6 +16,12 @@
 //= require lazybox
 //= require_tree .
 
+function set_mobile_toggle() {
+  $('#mobile_menu_toggle').on('click', function() {
+    $('#mobile_menu').toggle();
+  });
+}
+
 function highlight() {
   $('.fa-stockit').animate({opacity: 1}, 2000, dim);
 }
@@ -57,3 +63,6 @@ $(document).ready(function() {
 
 $(document).ready(bind_buttons);
 $(document).on('page:load', bind_buttons);
+
+$(document).ready(set_mobile_toggle);
+$(document).on('page:load', set_mobile_toggle);
