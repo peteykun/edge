@@ -1,12 +1,26 @@
 <div class="event top clearfix">
 
-	<h1 class="left"><%= @event.name %></h1>
-	<%= image_tag @event.category.black_icon, class: 'class_icon' %>
+	<h1 class="left" style="margin-top: 0;"><%= @event.name %></h1>
+	
+  <%= image_tag @event.category.black_icon, class: 'class_icon' %>
 	
 	<div style="clear: both;"></div>
 	
 	<%= image_tag @event.image.url(:flagship), class: 'flagship' %>
-	
+
+  <% if @event.sponsor %>
+    <div class="event_sponsor clearfix">
+      <div class="event_sponsor_logo">
+        <%= link_to(@event.sponsor.url) { image_tag @event.sponsor.logo(:small), style: "height: 50px;" } if @event.sponsor %>
+      </div>
+
+      <p>
+        <%= @event.name %> is brought to you by the kind folk over at <b><%= @event.sponsor.name %></b>.<br>
+        For more information on <b><%= @event.sponsor.name %></b>, visit <%= link_to 'their website', @event.sponsor.url %>.
+      </p>
+    </div>
+  <% end %>
+
 	<% if false %>
 	<div class="prizes clearfix">
 		<div class="prize">

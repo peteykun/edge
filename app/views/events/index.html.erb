@@ -7,17 +7,30 @@
 		
 		<div style="clear: both;"></div>
 		
-		<% for event in category.events.order('id ASC') %>
-			<a href="<%= event_path(event) %>">
-				<div class="event_tile">
-					<%= image_tag event.image.url(:tile), class: 'thumbnail' %>
-					<div class="hover">
-						<div class="name"><%= event.name %></div>
-						<div class="short_desc"><%= event.short_description %></div>
-					</div>
-				</div>
-			</a>
-		<% end %>
+  		<% for event in category.events.order('id ASC') %>
+  			<a href="<%= event_path(event) %>">
+  				<div class="event_tile">
+  					<%= image_tag event.image.url(:tile), class: 'thumbnail' %>
+  					<div class="hover">
+  						<div class="name"><%= event.name %></div>
+  						<div class="short_desc"><%= event.short_description %></div>
+  					</div>
+  				</div>
+  			</a>
+  		<% end %>
+
+      <% if category.sponsor %>
+        <div class="event_sponsor clearfix">
+          <div class="event_sponsor_logo">
+            <%= link_to(category.sponsor.url) { image_tag category.sponsor.logo(:small), style: "height: 50px;" } if category.sponsor %>
+          </div>
+
+          <p>
+            <%= category.name %> is brought to you by the kind folk over at <b><%= category.sponsor.name %></b>.<br>
+            For more information on <b><%= category.sponsor.name %></b>, visit <%= link_to 'their website', category.sponsor.url %>.
+          </p>
+        </div>
+      <% end %>
 
 		</div>
 	<% end %>

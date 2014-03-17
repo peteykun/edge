@@ -14,7 +14,7 @@ ActiveAdmin.register Category do
   #  permitted
   # end
 
-  permit_params :name, :priority, :black_icon, :white_icon
+  permit_params :name, :priority, :black_icon, :white_icon, :sponsor_id
   config.sort_order = 'id_asc'
   
   index do
@@ -43,6 +43,11 @@ ActiveAdmin.register Category do
       f.input :black_icon, as: :file
       f.input :white_icon, as: :file
     end
+
+    f.inputs "Sponsor" do
+      f.input :sponsor
+    end
+
     f.actions
   end
 

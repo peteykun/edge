@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
   has_many :events
+  belongs_to :sponsor
 
   has_attached_file :black_icon, styles: { small: '30x30' },
     storage: :ftp,

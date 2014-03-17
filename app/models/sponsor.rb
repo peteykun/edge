@@ -1,4 +1,7 @@
 class Sponsor < ActiveRecord::Base
+  has_one :event
+  has_one :category
+
   has_attached_file :logo, styles: { small: '160x65' },
     storage: :ftp,
     path: '/:class/:attachment/:id_partition/:style/:filename',
