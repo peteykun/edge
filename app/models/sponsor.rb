@@ -1,6 +1,6 @@
 class Sponsor < ActiveRecord::Base
-  has_one :event
-  has_one :category
+  has_many :events
+  has_many :categories
 
   has_attached_file :logo, styles: { small: '160x65' },
     storage: :ftp,

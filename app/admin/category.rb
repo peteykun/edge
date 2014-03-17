@@ -45,7 +45,12 @@ ActiveAdmin.register Category do
     end
 
     f.inputs "Sponsor" do
-      f.input :sponsor
+      @category = Category.find(params[:id])
+      max_year = Sponsor.maximum(:year)
+      where_clause = "year = " + max_year.to_s
+      where_clause += " or id = " + @category.sponsor.id.to_s if @category.sponsor
+      
+      f.input :sponsor, collection: Hash[Sponsor.where(where_clause).map{|s| [s.year == max_year ? s.name : s.name + ' (' + s.year.to_s + ')', s.id]}]
     end
 
     f.actions
