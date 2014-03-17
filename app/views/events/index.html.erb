@@ -26,8 +26,8 @@
           </div>
 
           <p>
-            <%= category.name %> is brought to you by the kind folk over at <b><%= category.sponsor.name %></b>.<br>
-            For more information on <b><%= category.sponsor.name %></b>, visit <%= link_to 'their website', category.sponsor.url %>.
+            <%= category.name %> is brought to you by <b><%= category.sponsor.name %></b>.<br>
+            For more information, visit <%= link_to 'their website', category.sponsor.url %>.
           </p>
         </div>
       <% end %>

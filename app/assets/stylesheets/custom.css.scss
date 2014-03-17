@@ -956,14 +956,28 @@ iframe {
     width: auto;
 
     .event_class {
+      h1 {
+        font-size: 1.75em;
+        line-height: 50px;
+      }
+
       a.event_link {
         width: 49%;
         text-decoration: none;
+
+        &:nth-child(odd) {
+          float: left;
+        }
+
+        &:nth-child(odd) {
+          float: right;
+        }
 
         .event_tile {
           border: 1px solid #CC181E;
           height: auto;
           background: #CC181E;
+          margin: 0;
 
           img {
             width: 100%;

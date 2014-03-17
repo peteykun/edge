@@ -15,8 +15,8 @@
       </div>
 
       <p>
-        <%= @event.name %> is brought to you by the kind folk over at <b><%= @event.sponsor.name %></b>.<br>
-        For more information on <b><%= @event.sponsor.name %></b>, visit <%= link_to 'their website', @event.sponsor.url %>.
+        <%= @event.name %> is brought to you by <b><%= @event.sponsor.name %></b>.<br>
+        For more information, visit <%= link_to 'their website', @event.sponsor.url %>.
       </p>
     </div>
   <% end %>
