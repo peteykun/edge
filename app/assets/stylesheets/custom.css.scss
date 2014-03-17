@@ -406,12 +406,12 @@ header {
         border-radius: 75px;
         border: 1px dashed #ccc;
         display: block;
-        margin: 20px auto 15px auto;
+        margin: 0 auto 15px auto;
       }
 
       a img:hover {
         border: 2px dashed #bbb;
-        margin: 19px auto 14px auto;
+        margin: -1px auto 14px auto;
       }
 
       .name, .affiliation {
