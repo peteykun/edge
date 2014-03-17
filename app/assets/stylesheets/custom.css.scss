@@ -409,6 +409,11 @@ header {
         margin: 20px auto 15px auto;
       }
 
+      a img:hover {
+        border: 2px dashed #bbb;
+        margin: 19px auto 14px auto;
+      }
+
       .name, .affiliation {
         font-size: 14px;
         text-transform: uppercase;
