@@ -1030,8 +1030,6 @@ iframe {
         padding-bottom: 20px;
         float: none;
 
-        
-
         &:after {
           content: " ";
           visibility: hidden;
@@ -1146,6 +1144,48 @@ iframe {
       &.active {
         a {
           color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 360px) {
+  .contacts {
+    a {
+      text-decoration: none;
+      margin: 0;
+
+      .contact {
+        margin: 0 auto;
+        padding-bottom: 20px;
+        float: none;
+        margin-right: 20px;
+
+        img {
+          width: 80px;
+          border-radius: 40px;
+        }
+
+        .contact_info {
+          width: 280px;
+          padding-top: 13.5px;
+
+          .name {
+            font-size: 1.1em;
+          }
+
+          .phone, .fb {
+            font-size: 1em;
+          }
+        }
+
+        &:after {
+          content: " ";
+          visibility: hidden;
+          display: block;
+          height: 0;
+          clear: both;
         }
       }
     }
