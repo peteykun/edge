@@ -149,11 +149,18 @@ form {
 	}
 }
 
-.fa-stockit {
-	background: image-url('stockit.png');
+.fa-stockit, .fa-geekowar {
 	height: 32px;
 	width: 128px;
 	background-size: cover;
+}
+
+.fa-stockit {
+  background: image-url('stockit.png');
+}
+
+.fa-geekowar {
+  background: image-url('geekowar.png');
 }
 
 .fa-ti {

@@ -72,10 +72,13 @@ ActiveAdmin.register Event do
     end
 
     f.inputs "Sponsor" do
-      @event = Event.friendly.find(params[:id])
       max_year = Sponsor.maximum(:year)
       where_clause = "year = " + max_year.to_s
-      where_clause += " or id = " + @event.sponsor.id.to_s if @event.sponsor
+
+      if params[:id]
+        @event = Event.friendly.find(params[:id])
+        where_clause += " or id = " + @event.sponsor.id.to_s if @event.sponsor
+      end
       
       f.input :sponsor, collection: Hash[Sponsor.where(where_clause).map{|s| [s.year == max_year ? s.name : s.name + ' (' + s.year.to_s + ')', s.id]}]
     end

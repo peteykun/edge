@@ -14,9 +14,19 @@
 	<i id="notifications_icon" class="fa fa-inbox fa-2x"></i>
 	<% end %>
 
+  <% if rand(1..10) <= 5 %>
+
 	<a href="http://stockit.edg.co.in/" target="_blank">
-		<i class="fa fa-stockit fa-2x"></i>
+		<i class="fa fa-stockit fa-2x featured_event_button"></i>
 	</a>
+
+  <% else %>
+
+  <a href="http://geekowar.edg.co.in/" target="_blank">
+    <i class="fa fa-geekowar fa-2x featured_event_button"></i>
+  </a>
+
+  <% end %>
 	
 </div>
 
