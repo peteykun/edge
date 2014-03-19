@@ -615,6 +615,7 @@ header {
 	height: 65px;
 	text-align: center;
 	position: relative;
+  border: 5px solid #fff;
 
   &.framed {
     border: 5px solid #CC181E;
@@ -1085,7 +1086,6 @@ iframe {
     width: 22%;
     text-align: center;
     position: relative;
-    border: 5px solid #fff;
 
     &.framed {
       border: none;
