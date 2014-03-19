@@ -6,7 +6,7 @@
   <%
     adjust = 0
 
-    subtitled = sponsors_in_year.where.not(subtitle: nil)
+    subtitled = sponsors_in_year.where.not(subtitle: [nil, ''])
     
     if subtitled.count % 4 != 0
       adjust = 4 - subtitled.count % 4
@@ -23,7 +23,7 @@
 
   <% i = 0 %>
 
-  <% for sponsor in sponsors_in_year.where(subtitle: nil) %>
+  <% for sponsor in sponsors_in_year.where(subtitle: [nil, '']) %>
     <div class="sponsor-logo <%= 'frame-align' if (i+=1) <= adjust %>">
       <%= link_to image_tag(sponsor.logo.url(:small)), sponsor.url, target: '_blank' %>
     </div>
