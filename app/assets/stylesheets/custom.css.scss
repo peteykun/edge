@@ -618,8 +618,8 @@ header {
   border: 5px solid #fff;
 
   &.framed {
-    border: 5px solid #CC181E;
-    border-bottom: 30px solid #CC181E;
+    border: 5px solid #fff;
+    border-bottom: 30px solid #fff;
   }
 
   &.frame-align {
@@ -634,6 +634,9 @@ header {
     text-transform: uppercase;
     font-size: 10.5px;
     bottom: -23px;
+    border-top: 1px dotted #CC181E;
+    padding-top: 6px;
+    color: #000;
     left: 0;
     right: 0;
     text-align: center;
