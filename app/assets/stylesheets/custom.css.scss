@@ -906,6 +906,30 @@ footer {
   }
 }
 
+.contact.box {
+  width: 280px;
+  text-align: center;
+  margin: 10px 0;
+  padding: 20px 20px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    float: none;
+    border: 1px dashed #ccc;
+  }
+
+  .contact_info {
+    .name {
+      font-size: 1.4em;
+    }
+
+    .phone, .fb {
+      font-size: 1.3em;
+    }
+  }
+}
+
 iframe {
   display: block;
 }

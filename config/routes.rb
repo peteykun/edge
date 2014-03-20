@@ -1,4 +1,5 @@
 Edge::Application.routes.draw do
+  get "static_pages/accomodation"
   get "ambassador_applications/new"
   get "campus_ambassadors/new"
   get "participants/new"
@@ -15,6 +16,7 @@ Edge::Application.routes.draw do
   match '/ambassador_program', to: 'ambassador_applications#new', via: 'get'
   get   '/gallery/show'
   match '/categories/set_preferred/:id', to: 'categories#set_preferred', via: :post
+  match '/accommodation', to: 'static_pages#accommodation', via: :get
 
   resources :events
   resources :contacts
