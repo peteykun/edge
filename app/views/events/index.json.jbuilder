@@ -8,7 +8,8 @@ json.categories @all_categories do |category|
     json.description raw @markdown.render(event.description).to_s
     json.image_url event.image.url
     json.contacts [event.contact1, event.contact2] do |contact|
-      json.extract! contact, :name, :phone, :facebook_username if contact
+      json.extract! contact, :name, :phone if contact
+      json.facebook contact.facebook_username if contact
     end
   end
 end
