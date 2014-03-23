@@ -1,9 +1,9 @@
-<% if @recent_updates.count > 0 %>
+<% if @latest_recent_updates.count > 0 %>
 <div id="recent_updates">
   <h3>Recent Updates</h3>
 
   <ul>
-    <% @recent_updates.each do |update| %>
+    <% @latest_recent_updates.each do |update| %>
     <li><b><%= update.created_at.strftime "%d %b" %>:</b> <%= update.body %></li>
     <% end %>
   </ul>

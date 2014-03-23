@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def populate_categories
     @minisites = MiniSite.all
-    @recent_updates = RecentUpdate.last(5).reverse
+    @latest_recent_updates = RecentUpdate.last(5).reverse
     @all_categories = Category.order(priority: :desc)
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @start_time = Time.now.usec
