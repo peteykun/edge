@@ -1,3 +1,15 @@
+<% if @recent_updates.count > 0 %>
+<div id="recent_updates">
+  <h3>Recent Updates</h3>
+
+  <ul>
+    <% @recent_updates.each do |update| %>
+    <li><b><%= update.created_at.strftime "%d %b" %>:</b> <%= update.body %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <% for category in @all_categories %>
 	<% if category.events.any? %>
 		<div class="event_class clearfix">
@@ -5,7 +17,7 @@
 		<h1 class="left"><%= category.name %></h1>
 		<%= image_tag category.black_icon.url, class: 'class_icon' %>
 		
-		<div style="clear: both;"></div>
+		<div class="clearfix"></div>
 		
   		<% for event in category.events.order('id ASC') %>
   			<a class="event_link" href="<%= event_path(event) %>">
@@ -18,6 +30,8 @@
   				</div>
   			</a>
   		<% end %>
+
+      <div class="clearfix"></div>
 
       <% if category.sponsor %>
         <div class="event_sponsor clearfix">
