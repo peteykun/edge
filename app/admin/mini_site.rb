@@ -14,6 +14,6 @@ ActiveAdmin.register MiniSite do
   #  permitted
   # end
 
-  permit_params :name, :url
+  permit_params :name, :url, :new
   
 end
