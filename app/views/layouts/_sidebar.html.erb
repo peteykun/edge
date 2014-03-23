@@ -61,9 +61,12 @@
 	<% end %>
 <% end %>
 
-<h3>Minisites</h3>
-<div class="separator clearfix"></div>
-<ul>
-  <li><a href="http://stockit.edg.co.in/" target="_blank">Stock IT!</a></li>
-  <li><a href="http://geekowar.edg.co.in/" target="_blank">Geek-o-War</a></li>
-</ul>
+<% if @minisites.count > 0 %>
+  <h3>Minisites</h3>
+  <div class="separator clearfix"></div>
+  <ul>
+    <% @minisites.each do |minisite| %>
+    <li><a href="<%= minisite.url %>" target="_blank"><%= minisite.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>

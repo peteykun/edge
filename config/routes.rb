@@ -1,8 +1,4 @@
 Edge::Application.routes.draw do
-  get "static_pages/accomodation"
-  get "ambassador_applications/new"
-  get "campus_ambassadors/new"
-  get "participants/new"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
@@ -16,7 +12,7 @@ Edge::Application.routes.draw do
   match '/ambassador_program', to: 'ambassador_applications#new', via: 'get'
   get   '/gallery/show'
   match '/categories/set_preferred/:id', to: 'categories#set_preferred', via: :post
-  match '/accommodation', to: 'static_pages#accommodation', via: :get
+  match '/accommodation', to: 'accommodation_requests#new', via: :get
 
   resources :events
   resources :contacts
@@ -26,6 +22,7 @@ Edge::Application.routes.draw do
   resources :participants
   resources :ambassador_applications
   resources :sessions
+  resources :accommodation_requests
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

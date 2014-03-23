@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :populate_categories
 
   def populate_categories
+    @minisites = MiniSite.all
     @all_categories = Category.order(priority: :desc)
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @start_time = Time.now.usec

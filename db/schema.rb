@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317111506) do
+ActiveRecord::Schema.define(version: 20140323182255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accommodation_requests", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.date     "from"
+    t.date     "to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "college"
+  end
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -134,6 +144,13 @@ ActiveRecord::Schema.define(version: 20140317111506) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "contact_category_id"
+  end
+
+  create_table "mini_sites", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "participants", force: true do |t|

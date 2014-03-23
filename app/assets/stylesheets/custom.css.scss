@@ -88,6 +88,10 @@ form {
   }
 }
 
+::-webkit-inner-spin-button {
+  display: none;
+}
+
 .hide {
 	display: none;
 }
