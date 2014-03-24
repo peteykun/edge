@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @contact_categories = ContactCategory.all
 
-    @success = @message.save
+    @success = verify_recaptcha(model: @message) && @message.save
 
     if @success
       #ContactMailer.contact_mail(@message).deliver
