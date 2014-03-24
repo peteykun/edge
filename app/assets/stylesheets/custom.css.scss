@@ -869,13 +869,25 @@ footer {
 		left: 10px;
 	}
 
-	#container {
-		margin-left: 230px;
-	}
+  #container {
+    margin-left: 230px;
+  }
 
-	#social_bar {
-		display: none;
-	}
+  #social_bar {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 1270px)
+{
+  #social_bar {
+    display: none;
+  }
+
+  #container {
+    margin-left: auto;
+    padding-left: 230px;
+  }
 }
 
 .category_checkboxes {
