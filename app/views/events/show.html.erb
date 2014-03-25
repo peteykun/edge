@@ -47,7 +47,7 @@
 	</div>
 	
 	<div class="contacts">
-		<% for contact in [@event.contact1, @event.contact2] %>
+		<% for contact in [@event.contact1, @event.contact2, @event.contact3] %>
 		<% if contact %>
 		<a href="<%= contact.facebook_url %>" target="_blank">
 			<div class="contact">

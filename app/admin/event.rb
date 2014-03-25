@@ -14,7 +14,7 @@ ActiveAdmin.register Event do
   #  permitted
   # end
 
-  permit_params :name, :new, :category_id, :short_description, :description, :contact1_id, :contact2_id, :sponsor_id, :image
+  permit_params :name, :new, :category_id, :short_description, :description, :contact1_id, :contact2_id, :contact3_id, :sponsor_id, :image
   config.sort_order = "id_asc"
 
   controller do
@@ -30,6 +30,9 @@ ActiveAdmin.register Event do
     end
     column 'Second contact', :contact2_id do |event|
       auto_link(event.contact2)
+    end
+    column 'Third contact', :contact3_id do |event|
+      auto_link(event.contact3)
     end
 
     default_actions
@@ -49,6 +52,7 @@ ActiveAdmin.register Event do
       row :category_id
       row :contact1_id
       row :contact2_id
+      row :contact3_id
       row :sponsor
     end
   end
@@ -69,6 +73,7 @@ ActiveAdmin.register Event do
     f.inputs "Contacts" do
       f.input :contact1, label: 'First contact'
       f.input :contact2, label: 'Second contact'
+      f.input :contact3, label: 'Third contact'
     end
 
     f.inputs "Sponsor" do

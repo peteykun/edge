@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :contact1, class_name: 'Contact', foreign_key: :contact1_id
   belongs_to :contact2, class_name: 'Contact', foreign_key: :contact2_id
+  belongs_to :contact3, class_name: 'Contact', foreign_key: :contact3_id
   belongs_to :sponsor
 
   has_and_belongs_to_many :participants

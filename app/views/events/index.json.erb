@@ -13,7 +13,7 @@
         "description": "<%= @markdown.render(event.description) %>",
         "image_url": "<%= event.image.url %>",
         "contacts": [
-          <% for contact in [event.contact1, event.contact2] %>
+          <% for contact in [event.contact1, event.contact2, event.contact3] %>
           <% if contact %>
           {
             "name": "<%= contact.name %>",
