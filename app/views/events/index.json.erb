@@ -2,12 +2,14 @@
   "categories": [
   <% @all_categories.each do |category| %>
   {
+    "id": <%= category.id %>,
     "name": "<%= category.name %>",
     "black_icon_url": "<%= category.black_icon.url %>",
     "white_icon_url": "<%= category.white_icon.url %>",
     "events": [
       <% category.events.each do |event| %>
       {
+        "id": <%= event.id %>,
         "name": "<%= event.name %>",
         "short_description": "<%= event.short_description %>",
         "description": "<%= @markdown.render(event.description) %>",
