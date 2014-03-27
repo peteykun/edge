@@ -7,7 +7,7 @@
     "black_icon_url": "<%= category.black_icon.url %>",
     "white_icon_url": "<%= category.white_icon.url %>",
     "events": [
-      <% category.events.each do |event| %>
+      <% category.events.order(:id).each do |event| %>
       {
         "id": <%= event.id %>,
         "name": "<%= event.name %>",
