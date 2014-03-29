@@ -13,6 +13,7 @@ Edge::Application.routes.draw do
   get   '/gallery/show'
   match '/categories/set_preferred/:id', to: 'categories#set_preferred', via: :post
   match '/accommodation', to: 'accommodation_requests#new', via: :get
+  match '/map', to: 'static_pages#map', via: :get
 
   resources :events
   resources :contacts
